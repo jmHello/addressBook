@@ -1,0 +1,132 @@
+#wrapper{
+    width: 76%;
+    margin: 20px auto;
+    background: grey;
+}
+
+/*nav*/
+.nav{
+    width: 100%;
+}
+.nav>div{
+    width: calc(16.66666667% - 1px);
+    font:1.2em/1.8 '';
+    border-right: 1px solid black;
+    text-align: center;
+    background: lightgray;
+    float: left;
+    position: relative;
+}
+.nav>div:last-child{
+    border-right: 1px solid transparent;
+}
+.nav>div>span{
+    width: 100%;
+    display: inline-block;
+    cursor: pointer;
+}
+.nav>div>span:hover{
+    color:blue;
+}
+.nav>div>ul{
+    position: absolute;
+    top:1.8em;
+    left: 0;
+    width: 100%;
+    background: ghostwhite;
+    z-index: 6;
+
+    display: none;
+}
+.nav>div>ul>li{
+    border-top: 1px solid black;
+    cursor: pointer;
+}
+.nav>div>ul>li:hover{
+    color: blue;
+}
+.nav>div>ul>li:first-child{
+    border-top: 1px solid transparent;
+}
+
+/*content*/
+.content{
+    width: calc(100% - 2*20px);
+    height: 460px;
+    padding: 20px;
+    overflow: auto;
+    position: relative;
+}
+.con_mainPage{
+    width: 100%;
+    height: 100%;
+    font: 4.2em/4.2 '';
+    text-align: center;
+    /*display: none;*/
+}
+.con_mainPage>h1{
+    height: 100%;
+}
+.con_table{
+    width:80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: lavender;
+    font: 1.3em/1.8 '';
+    display: none;
+}
+.con_table>thead,.con_table tr{
+    width: 100%;
+}
+.con_table td,.con_table th{
+    width: 30%;
+    border: 1px solid black;
+    text-align: center;
+
+}
+.form{
+    position: absolute;
+    top:12%;
+    left: 12%;
+    width: calc(76% - 2*20px);
+    padding: 14px;
+    text-align: center;
+    font: 1.3em/1.8 '';
+    border: 3px solid black;
+    background: gainsboro;
+    display: none;
+}
+.form>h2{
+    margin-bottom: 15px;
+}
+.form>div{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.form>div:not(:last-child)>:nth-child(2){
+    width: 40%;
+    height: 1.8em;
+    text-indent: 5px;
+}
+.form>div:last-child{
+    margin-left: 6%;
+}
+.form>div:last-child>button{
+    width: 100px;
+    font:1.1em/1.6 '';
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    background: dodgerblue ;
+    cursor: pointer;
+}
+.form>div:last-child>button:hover{
+    color: yellow;
+}
+
+.hide{
+    display: none!important;
+}
+.show{
+    display: block!important;
+}

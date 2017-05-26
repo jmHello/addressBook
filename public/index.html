@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通讯录</title>
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/library/j_ownCss.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+</head>
+<body>
+<div id="wrapper">
+    <!-- nav -->
+    <div class="nav clearfix">
+        <div>
+            <span>首页</span>
+        </div>
+        <div class="sec_menu">
+            <span>查询信息</span>
+            <ul>
+                <li id="checkAllInfos">查看全部信息</li>
+                <li class="form_s" jm-target="cInfoById">按学号查询</li>
+                <li class="form_s" jm-target="cInfoByName">按姓名查询</li>
+            </ul>
+        </div>
+        <div class="sec_menu">
+            <span>信息排序</span>
+            <ul>
+                <li id="rangeById">按学号排序</li>
+                <li id="rangeByName">按姓名排序</li>
+            </ul>
+        </div>
+        <div>
+            <span class="form_s" jm-target="a_info">新增信息</span>
+        </div>
+        <div>
+            <span class="form_s" jm-target="m_info">修改信息</span>
+        </div>
+        <div>
+            <span class="form_s" jm-target="d_info">删除信息</span>
+        </div>
+    </div>
+    <!-- content -->
+    <div class="content">
+
+        <div class="con_mainPage">
+            <h1>通讯录</h1>
+        </div>
+
+        <table class="con_table">
+            <thead>
+                <tr>
+                    <th>学号</th>
+                    <th>姓名</th>
+                    <th>手机</th>
+                    <th>QQ号</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--<tr>-->
+                    <!--<td></td>-->
+                    <!--<td></td>-->
+                    <!--<td></td>-->
+                    <!--<td></td>-->
+                <!--</tr>-->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- check info by schoolNum -->
+<div id="cInfoById" class="modal jm_drag" jm-toggle>
+    <div class="modal_content">
+        <div class="modal_header">
+            <button type="button" class="close" jm-dismiss>x</button>
+            <h4 class="modal_title">按学号查询</h4>
+        </div>
+        <div class="modal_body">
+            <form class="form_control">
+                <div>
+                    <label for="c_id">学号：</label><input type="text" id="c_id" name="c_id">
+                    <div class="tips"></div>
+                </div>
+            </form>
+        </div>
+        <div class="modal_footer">
+            <button type="button" class="btn btn_primary" id="checkInfoById">确认</button>
+            <button type="button" class="btn btn_primary" jm-dismiss>取消</button>
+        </div>
+    </div>
+</div>
+
+<div id="cInfoByName" class="modal jm_drag" jm-toggle>
+    <div class="modal_content">
+        <div class="modal_header">
+            <button type="button" class="close" jm-dismiss>x</button>
+            <h4 class="modal_title">按姓名查询</h4>
+        </div>
+        <div class="modal_body">
+            <form class="form_control">
+                <div>
+                    <label for="c_id">姓名：</label><input type="text" id="c_name" name="c_name">
+                    <div class="tips"></div>
+                </div>
+            </form>
+        </div>
+        <div class="modal_footer">
+            <button type="button" class="btn btn_primary" id="checkInfoByName">确认</button>
+            <button type="button" class="btn btn_primary" jm-dismiss>取消</button>
+        </div>
+    </div>
+</div>
+
+<!-- add info -->
+<div id="a_info" class="modal jm_drag" jm-toggle>
+    <div class="modal_content ">
+        <div class="modal_header">
+            <button type="button" class="close" jm-dismiss>x</button>
+            <h4 class="modal_title">增加信息</h4>
+        </div>
+        <div class="modal_body">
+            <form class="form_control">
+                <div>
+                    <label for="n_id">学号：</label><input type="text" id="n_id" name="n_id">
+                    <div class="tips"></div>
+                </div>
+                <div>
+                    <label for="n_name">姓名：</label><input type="text" id="n_name" name="n_name">
+                    <div class="tips"></div>
+                </div>
+                <div>
+                    <label for="n_telephoneNum">手机号码：</label><input type="text" id="n_telephoneNum" name="n_telephoneNum">
+                    <div class="tips"></div>
+                </div>
+                <div>
+                    <label for="n_qq">QQ号：</label><input type="text" id="n_qq" name="n_qq">
+                    <div class="tips"></div>
+                </div>
+            </form>
+        </div>
+        <div class="modal_footer">
+            <button type="button" id="addInfos" class="btn btn_primary">添加信息</button>
+            <button type="button" class="btn btn_primary" jm-dismiss>取消</button>
+        </div>
+    </div>
+</div>
+<!-- modify info -->
+<div id="m_info" class="modal jm_drag" jm-toggle>
+    <div class="modal_content">
+        <div class="modal_header">
+            <button type="button" class="close" jm-dismiss>x</button>
+            <h4 class="modal_title">修改信息</h4>
+        </div>
+        <div class="modal_body">
+            <form class="form_control">
+                <div>
+                    <label for="m_id">学号：</label><input type="text" id="m_id" name="m_id">
+                    <div class="tips"></div>
+                </div>
+                <div>
+                    <label for="m_name">姓名：</label><input type="text" id="m_name" name="m_name">
+                    <div class="tips"></div>
+                </div>
+                <div>
+                    <label for="m_telephoneNum">手机号码：</label><input type="text" id="m_telephoneNum" name="m_telephoneNum">
+                    <div class="tips"></div>
+                </div>
+                <div>
+                    <label for="m_qq">QQ号：</label><input type="text" id="m_qq" name="m_qq">
+                    <div class="tips"></div>
+                </div>
+            </form>
+        </div>
+        <div class="modal_footer">
+            <button type="button" class="btn btn_primary" id="modifyInfos">修改信息</button>
+            <button type="button" class="btn btn_primary" jm-dismiss>取消</button>
+        </div>
+    </div>
+</div>
+<!-- delete info -->
+<div id="d_info" class="modal jm_drag" jm-toggle>
+    <div class="modal_content">
+        <div class="modal_header">
+            <button type="button" class="close" jm-dismiss>x</button>
+            <h4 class="modal_title">删除信息</h4>
+        </div>
+        <div class="modal_body">
+            <form class="form_control">
+                <div>
+                    <label for="d_id">学号：</label><input type="text" id="d_id" name="d_id">
+                    <div class="tips"></div>
+                </div>
+            </form>
+        </div>
+        <div class="modal_footer">
+            <button type="button" class="btn btn_primary" id="deleteInfo">确认</button>
+            <button type="button" class="btn btn_primary" jm-dismiss>取消</button>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="/js/j_ownlibrary.js"></script>
+<script type="text/javascript" src="/library/j_plugIn.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+</body>
+</html>

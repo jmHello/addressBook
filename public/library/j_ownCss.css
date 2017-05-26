@@ -1,0 +1,148 @@
+/*basic style*/
+/*btn*/
+.btn{
+    padding: 6px 12px;
+    font:14px/1.42857143 '';
+    text-align: center;
+    margin: 0;
+    display: inline-block;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn_primary{
+    color: #ffffff;
+    background: dodgerblue;
+}
+
+/*form*/
+.form_control{
+    width: 100%;
+    font:1.3em/1.6 '';
+}
+.form_control>div{
+    margin-bottom: 18px;
+}
+.form_control>div:last-child{
+    margin-bottom: 0;
+}
+.form_control label{
+    width: 20%;
+    display: inline-block;
+    text-align: left;
+}
+.form_control [type='text']{
+    width: 45%;
+    line-height: 1.6;
+    text-indent: 5px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+}
+
+/* tips */
+/*
+   <div class="tips"></div>
+*/
+.tips{
+    width: calc(80% - 2*10px);
+    font: 1.1em/1 '';
+    padding: 10px;
+    margin: 10px 0;
+    color: red;
+    border: 2px solid red;
+    border-radius: 6px;
+    background: white;
+    display: none;
+}
+/*
+modal
+    <div class="modal">
+        <div class="modal_dialog">
+            <div class="modal_content">
+                <div class="modal_header">
+                    <button type="button">x</button>
+                    <h4>标题</h4>
+                </div>
+                <div class="modal_body"></div>
+                <div class="modal_footer">
+                    <button type="button">关闭</button>
+                    <button type="button">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+*/
+.modal{
+    position: absolute;
+    top:10%;
+    left:28%;
+    z-index: 1050;
+    outline: 0;
+    display: none;
+    cursor: pointer;
+}
+.modal_content{
+    width: auto;
+    position: relative;
+    background:  #fff;
+    border: 1px solid #999;
+    outline: none;
+}
+.modal_header{
+    min-height:16.428571429px;
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.modal_header .close{
+    font:1.4em/1 '';
+    margin-top:-2px;
+    background: transparent;
+    cursor: pointer;
+    float: right;
+}
+.modal_title{
+    line-height:  1.428571429em;
+    float: left;
+}
+.modal_body{
+    position: relative;
+    padding: 20px;
+    overflow: auto;
+}
+.modal_footer{
+    padding: 19px 20px 20px;
+    margin-top: 15px;
+    text-align: right;
+    border-top: 1px solid #e5e5e5;
+}
+.modal_footer .btn + .btn{
+    margin-left: 5px;
+}
+.modal_backdrop{
+    position: fixed;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background: rgba(0,0,0,0.4);
+}
+
+@media (min-width: 768px) {
+    .modal_content{
+        width: 600px;
+        margin: 30px auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .modal-lg {
+        width: 900px;
+    }
+}
+.show{
+    display: block;!important;
+}
+.hide{
+    display: none;!important;
+}
